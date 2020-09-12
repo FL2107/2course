@@ -2,17 +2,14 @@
 
 using Vertex = int;
 
-class IGraph {  //Интерфейс графа
+class IGraph {
 public:
-    virtual ~IGraph() {}    //Виртуальный деструктор чтобы при удалении по указателю не было утечки памяти
+    virtual ~IGraph() {}
 
-    //Добавить ребро выходящее из вершины from и ведущее в вершину to
-    virtual void AddEdge(Vertex from, Vertex to) = 0;   //чисто виртуальная функция (не имеет реализации в этом классе
+    virtual void AddEdge(Vertex from, Vertex to) = 0;
 
-    //получить кол-во вершин в графе
     virtual size_t GetGraphSize() const = 0;
 
-    //Получить вектор всех вершин в которые можно попасть по ребру из вершины vertex
     virtual const std::vector<size_t> GetAdj(Vertex vertex) const = 0;
 };
 
